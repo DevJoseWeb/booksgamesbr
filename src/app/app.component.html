@@ -1,3 +1,5 @@
+<audio autoplay="true" src="https://firebasestorage.googleapis.com/v0/b/livro-x.appspot.com/o/mp3%2Ftone.mp3?alt=media&token=dc461ad9-bf86-4b93-afd4-5376d8634fed"></audio>
+
 <mat-sidenav-container>
    
   <mat-sidenav #sidenav mode="push">
@@ -6,7 +8,7 @@
         
       <img [src]="logo"/> 
       
-      <span>BooksGames-Br</span>
+      <!--<span> BooksGames-Br Arte em Games</span>-->
 
     </div>
      
@@ -34,9 +36,9 @@
           [src]="logo"/></span>
         </a>
         <span routerLink="" class="branding spacer d-none d-sm-inline d-md-none text-center"><img
-          [src]="logo"/> BooksGames-Br</span>
+          [src]="logo"/></span>
         <span routerLink="" class="branding spacer d-none d-md-inline"><img
-          [src]="logo"/> BooksGames-Br</span>
+          [src]="logo"/>BooksGames-Br Arte em Games</span>
 
         <span class="d-none d-md-inline">
           <button mat-button class="nav-button" *ngFor="let item of navigation"
@@ -91,6 +93,7 @@
       </mat-toolbar>
     </div>
 
+   
     <div class="content"
          [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
       <router-outlet #o="outlet"></router-outlet>
@@ -128,7 +131,7 @@
       </div>
       <div class="row">
         <div class="col-12 signature">
-          &#169; {{year}} - BooksGames-Br
+          &#169; {{year}} - BooksGames-Br Arte em Games, Todos os Direitos Reservados.
           <br class="d-block d-sm-none">
           <a matTooltip="Show changelog"
              matTooltipPosition="before"
@@ -137,8 +140,13 @@
           </a>
         </div>
       </div>
-    </div>
-
-  </div>
-
-</mat-sidenav-container>
+    </div>-
+   </div>
+ 
+     <!--
+   <iframe id="location-layer" scrolling="no" src="http://maps.gstatic.com/m/streetview/?hl=en&amp;ll=35.01922,135.679994&amp;spn=0.003027,0.006539&amp;cbll=35.018781,135.680092&amp;layer=c&amp;cbp=12,308.22,,0,-2.51&amp;t=m&amp;z=18&amp;panoid=uvKwcaiSJSarjdD4ioiMzA" style="width: 100%; height: 100%;">
+   </iframe> 
+    <div id="walk-container">
+      <div id="walk"></div>
+    </div>   
+  -->

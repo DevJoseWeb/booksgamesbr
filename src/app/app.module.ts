@@ -11,6 +11,11 @@ import { StaticModule } from './static';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+//export const firebaseConfig = environment.firebaseConfig;
+//firebase.initializeApp(config);
+
 @NgModule({
   imports: [
     // angular
@@ -26,7 +31,9 @@ import { AppComponent } from './app.component';
     SettingsModule,
 
     // app
-    AppRoutingModule
+    AppRoutingModule,
+
+    //AngularFireModule.initializeApp(firebaseConfig),
   ],
   declarations: [AppComponent],
   providers: [],

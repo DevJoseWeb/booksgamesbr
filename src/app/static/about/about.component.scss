@@ -50,8 +50,9 @@
     bottom: 0;
     right: 0;
     background: url('../../../assets/intro.jpg') no-repeat center top;
+   // <iframe id="location-layer" scrolling="no" src="http://maps.gstatic.com/m/streetview/?hl=en&amp;ll=35.01922,135.679994&amp;spn=0.003027,0.006539&amp;cbll=35.018781,135.680092&amp;layer=c&amp;cbp=12,308.22,,0,-2.51&amp;t=m&amp;z=18&amp;panoid=uvKwcaiSJSarjdD4ioiMzA" style="width: 235px; height: 658px;"></iframe>
     background-size: cover;
-    opacity: 0.7;
+   // opacity: 0.7;
     content: '';
     z-index: 0;
   }
@@ -59,7 +60,7 @@
   .gradient {
     &::before {
       position: absolute;
-      top: 60%;
+      top: 95%;
       left: 0;
       bottom: 0;
       right: 0;

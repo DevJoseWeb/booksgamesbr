@@ -18,5 +18,14 @@ export const environment = {
     rxjs: packageJson.dependencies.rxjs,
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript']
+  },
+  config : {
+    apiKey: "AIzaSyBx9iUZTB1eBnAapZwF8C_fpAocqKE0nzs",
+    authDomain: "booksgames-br.firebaseapp.com",
+    databaseURL: "https://booksgames-br.firebaseio.com",
+    projectId: "booksgames-br",
+    storageBucket: "booksgames-br.appspot.com",
+    messagingSenderId: "498253610795"
   }
 };
+

@@ -1,77 +1,89 @@
 <div class="container">
-  <div class="row">
-    <div class="offset-md-2 col-md-8 entry">
-      <anms-big-input placeholder="I am going to do..."
-                      [value]="newTodo"
-                      (keyup)="onNewTodoChange($event.target.value)"
-                      (keyup.enter)="!isAddTodoDisabled && onAddTodo()"
-                      (keyup.escape)="onNewTodoClear()">
-        <anms-big-input-action icon="add" color="accent"
-                               (action)="onAddTodo()"
-                               [disabled]="isAddTodoDisabled"
-                               matTooltip="Add new todo" matTooltipPosition="before">
-        </anms-big-input-action>
-        <anms-big-input-action icon="delete_forever" color="warn"
-                               (action)="onRemoveDoneTodos()"
-                               [disabled]="isRemoveDoneTodosDisabled"
-                               matTooltip="Remove done todos" matTooltipPosition="after">
-        </anms-big-input-action>
-      </anms-big-input>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h2>
-        Todo List
-        <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
-          <mat-icon>filter_list</mat-icon>
-        </button>
-        <mat-menu class="todos-filter-menu" #todosFilter="matMenu" xPosition="before">
-          <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
-            <mat-icon>assignment</mat-icon>
-            <span>All</span>
-          </button>
-          <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
-            <mat-icon>done</mat-icon>
-            <span>Done</span>
-          </button>
-          <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
-            <mat-icon>check_box_outline_blank</mat-icon>
-            <span>Active</span>
-          </button>
-        </mat-menu>
-        <mat-chip-list class="todos-filter-info d-none d-sm-block">
-          <mat-chip>
-            Displaying {{todos.filter !== 'ALL' ? filteredTodos.length : ''}}
-            {{todos.filter.toLowerCase()}}
-            {{todos.filter === 'ALL' ? filteredTodos.length : ''}}
-            todo{{filteredTodos.length > 1 ? 's' : ''}}
-          </mat-chip>
-        </mat-chip-list>
-      </h2>
-      <mat-card *ngFor="let todo of filteredTodos" class="todo" [ngClass]="animateOnRouteEnter">
-        <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>
-        <span class="todo-label" (click)="onToggleTodo(todo)">{{todo.name}}</span>
-      </mat-card>
-      <br>
-      <br>
-    </div>
-    <div class="offset-md-1  col-md-5">
-      <h2>Todo Example</h2>
-      <p>
-        This is a classic <code>todo</code> example with support for
-        adding, toggling, removing and filtering of the todo items.
-      </p>
-      <p>
-        State handling is implemented using <code>ngrx</code> module
-        and support for lazy loaded reducers (this is a lazy loaded feature module).
-      </p>
-      <p>
-        Todos are persisted into local storage so you should see your todos
-        also on later visits when using the same browser.
-      </p>
-      <br>
-    </div>
-  </div>
+  <mat-accordion>
 
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          1 - Começar o Jogo, Matando Minha Burrice !
+        </mat-panel-title>
+        <mat-panel-description>
+          Agora começa a Brincadeira, Agora nos separamos os Homens dos Ratos !
+          
+        </mat-panel-description>
+        <i class="material-icons">wb_incandescent</i>
+      </mat-expansion-panel-header>
+     
+      <mat-card>
+            2<iframe width="800" height="600" src="https://www.youtube.com/embed/1YofRV2j9O4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          3<iframe width="800" height="600" src="https://www.youtube.com/embed/DELI-3Y3sIU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          4<iframe width="800" height="600" src="https://www.youtube.com/embed/yNLUqQUt3p4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          5<iframe width="800" height="600" src="https://www.youtube.com/embed/t508aU261eY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          6<iframe width="800" height="600" src="https://www.youtube.com/embed/jV89fMFIcjg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          7<iframe width="800" height="600" src="https://www.youtube.com/embed/d9QCMSePBPc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          8<iframe width="800" height="600" src="https://www.youtube.com/embed/tpjb2HC5v30" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          9<iframe width="800" height="600" src="https://www.youtube.com/embed/ayNZhKp06J4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          10<iframe width="800" height="600" src="https://www.youtube.com/embed/kcsgGt4d64Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          11<iframe width="800" height="600" src="https://www.youtube.com/embed/LNBBeY7lfsU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          12<iframe width="800" height="600" src="https://www.youtube.com/embed/oVOMFgGFPX0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          13<iframe width="800" height="600" src="https://www.youtube.com/embed/GwNBL0BZnHE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          14<iframe width="800" height="600" src="https://www.youtube.com/embed/9sLNNY12NRY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          15<iframe width="800" height="600" src="https://www.youtube.com/embed/YHd-4Zb3Xbg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          16<iframe width="800" height="600" src="https://www.youtube.com/embed/F6763kMJhuU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          17<iframe width="800" height="600" src="https://www.youtube.com/embed/qpBKGkVzMGo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+      <mat-card>
+          18<iframe width="800" height="600" src="https://www.youtube.com/embed/kY9G2H586lw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </mat-card>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            2 - Curso Avançado de Unity
+          </mat-panel-title>
+          <mat-panel-description>
+            #1 -  Unity 2017 Compatible In C#
+            
+          </mat-panel-description>
+          <i class="material-icons">wb_incandescent</i>
+        </mat-expansion-panel-header>
+       
+        <mat-card>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BV6Itd98gRw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </mat-card>
+       
+      </mat-expansion-panel>
+
+  </mat-accordion>
+  
 </div>

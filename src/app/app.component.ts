@@ -2,10 +2,14 @@ import { Title } from '@angular/platform-browser';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
+
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators/takeUntil';
 import { filter } from 'rxjs/operators/filter';
+
+//import { BarraComponent } from 'barracomponent';
 
 import {
   ActionAuthLogin,
@@ -33,22 +37,26 @@ export class AppComponent implements OnInit, OnDestroy {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../assets/logo.png');
+
   navigation = [
     { link: 'about', label: 'Início' },
-    { link: 'features', label: 'Games Educativos' },
-    { link: 'examples', label: 'Games não muito Educativos' }
+    { link: 'features', label: 'Nossos Games Educativos' },
+    { link: 'examples', label: 'Sala de Aula Gamer' }
   ];
+
   navigationSideMenu = [
     ...this.navigation,
     { link: 'settings', label: 'Configuração' }
   ];
+  
   isAuthenticated;
 
   constructor(
     public overlayContainer: OverlayContainer,
     private store: Store<any>,
     private router: Router,
-    private titleService: Title
+    private titleService: Title,
+    public snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -103,4 +111,11 @@ export class AppComponent implements OnInit, OnDestroy {
   onLogoutClick() {
     this.store.dispatch(new ActionAuthLogout());
   }
+
+  openSnackBar() {
+    this.snackBar.openFromComponent(AppComponent, {
+      duration: 900,
+    });
+  }
 }
+

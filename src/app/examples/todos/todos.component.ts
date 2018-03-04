@@ -22,6 +22,9 @@ import {
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit, OnDestroy {
+  
+  panelOpenState: boolean = false;// painel stadon
+
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;

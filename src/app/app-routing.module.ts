@@ -2,33 +2,38 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { SettingsComponent } from './settings';
+import { ContatoComponent } from './contato/contato.component'
+import { GoogleMapComponent } from './google-map/google-map.component';
 
 const routes: Routes = [
+
   {
-    path: '',
-    redirectTo: 'about',
-    pathMatch: 'full'
+    path: '', redirectTo: 'about', pathMatch: 'full'
   },
   {
-    path: 'settings',
-    component: SettingsComponent,
-    data: {
-      title: 'Settings'
-    }
+    //path: 'contato', redirectTo: 'contato'
+    path: 'contato',      component: ContatoComponent 
   },
   {
-    path: 'examples',
-    loadChildren: 'app/examples/examples.module#ExamplesModule'
+    path: 'settings', component: SettingsComponent, data: { title: 'Settings'}
   },
   {
-    path: '**',
-    redirectTo: 'about'
+    path: 'examples', loadChildren: 'app/examples/examples.module#ExamplesModule'
+  },
+  {
+    path: '**', redirectTo: 'about'
+  },
+  {
+    path: 'google-map', component: GoogleMapComponent, data: { title: 'google-map'}
   }
+
 ];
 
 @NgModule({
-  // useHash supports github.io demo page, remove in your app
+
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
+
 })
+
 export class AppRoutingModule {}

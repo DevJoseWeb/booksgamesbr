@@ -48,7 +48,7 @@ export const initialState: TodosState = {
     { id: uuid(), name: 'Check the other examples', done: false },
     {
       id: uuid(),
-      name: 'Use Angular ngRx Material Starter in your project',
+      name: 'BooksGames',
       done: false
     }
   ],

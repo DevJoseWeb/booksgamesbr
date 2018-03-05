@@ -16,10 +16,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-//MINHAS MUDANÇAS 
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+//MINHAS MUDANÇAS ADICIONAIS
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 import { BigInputComponent } from './big-input/big-input.component';
@@ -29,7 +29,6 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
   imports: [
     CommonModule,
     FormsModule,
-
     MatButtonModule,
     MatToolbarModule,
     MatSelectModule,
@@ -46,12 +45,11 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatTooltipModule,
     MatExpansionModule,
     MatSnackBarModule,
-  ],
+   ],
   declarations: [BigInputComponent, BigInputActionComponent],
   exports: [
     CommonModule,
     FormsModule,
-
     MatButtonModule,
     MatMenuModule,
     MatTabsModule,
@@ -68,7 +66,6 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatTooltipModule,
     MatExpansionModule,
     MatSnackBarModule,
-
     BigInputComponent,
     BigInputActionComponent
   ]

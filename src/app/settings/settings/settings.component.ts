@@ -21,9 +21,9 @@ export class SettingsComponent implements OnInit, OnDestroy {
   settings: SettingsState;
 
   themes = [
-    { value: 'DEFAULT-THEME', label: 'Blue' },
-    { value: 'LIGHT-THEME', label: 'Light' },
-    { value: 'BLACK-THEME', label: 'Dark' }
+    { value: 'DEFAULT-THEME', label: 'Azul' },
+    { value: 'LIGHT-THEME', label: 'Leve' },
+    { value: 'BLACK-THEME', label: 'Escuro' }
   ];
 
   constructor(private store: Store<any>) {
@@ -33,7 +33,9 @@ export class SettingsComponent implements OnInit, OnDestroy {
       .subscribe(settings => (this.settings = settings));
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();

@@ -9,16 +9,14 @@ import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators/takeUntil';
 import { filter } from 'rxjs/operators/filter';
 
-//import { BarraComponent } from 'barracomponent';
-
 import {
   ActionAuthLogin,
   ActionAuthLogout,
   selectorAuth,
   routerTransition
 } from '@app/core';
-import { environment as env } from '@env/environment';
 
+import { environment as env } from '@env/environment';
 import { NIGHT_MODE_THEME, selectorSettings } from './settings';
 
 @Component({
@@ -27,7 +25,9 @@ import { NIGHT_MODE_THEME, selectorSettings } from './settings';
   styleUrls: ['./app.component.scss'],
   animations: [routerTransition]
 })
+
 export class AppComponent implements OnInit, OnDestroy {
+
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   @HostBinding('class') componentCssClass;
@@ -39,9 +39,11 @@ export class AppComponent implements OnInit, OnDestroy {
   logo = require('../assets/logo.png');
 
   navigation = [
+
     { link: 'about', label: 'Início' },
     { link: 'features', label: 'Nossos Games Educativos' },
     { link: 'examples', label: 'Sala de Aula Gamer' }
+  
   ];
 
   navigationSideMenu = [
@@ -55,8 +57,9 @@ export class AppComponent implements OnInit, OnDestroy {
     public overlayContainer: OverlayContainer,
     private store: Store<any>,
     private router: Router,
-    private titleService: Title,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private titleService: Title
+    
   ) {}
 
   ngOnInit(): void {
@@ -113,9 +116,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   openSnackBar() {
-    this.snackBar.openFromComponent(AppComponent, {
-      duration: 900,
-    });
+   //this.snackBar.openFromComponent(BarraCombcponent, { duration: 900, });
+   this.snackBar.open('CURIOSO', 'X', { duration: 800 });
   }
 }
 

@@ -21,9 +21,10 @@ import { NIGHT_MODE_THEME, selectorSettings } from './settings';
     ngOnInit(){}
 
     openSnackBar() {
-      this.snackBar.openFromComponent(BarraComponent, {
-        duration: 500,
+      this.snackBar.openFromComponent(BarraComponent, {duration: 500,
       });
+
+     this.snackBar.open('CURIOSO PRA CARALHO');
     }
 
   }

@@ -11,13 +11,20 @@ import { StaticModule } from './static';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-//import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
-//export const firebaseConfig = environment.firebaseConfig;
-//firebase.initializeApp(config);
 
-// Angular Material
-//import {  } from '@angular/material';
+//FIREBASE
+import { AngularFireModule } from 'angularfire2';
+export const firebaseConfig = environment.firebaseConfigs;
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { AgmCoreModule } from '@agm/core';
+import { GoogleMapComponent } from './google-map/google-map.component';
+import { ContatoComponent } from './contato/contato.component';
+
+//import { GoogleMapModule } from './google-map/google-map.module'
+
+import { ContatoModule } from './contato/contato.module';
 
 @NgModule({
   imports: [
@@ -36,9 +43,19 @@ import { environment } from '../environments/environment';
     // app
     AppRoutingModule,
 
-    //AngularFireModule.initializeApp(firebaseConfig),
+    ContatoModule,
+
+    //GoogleMapModule,
+    //BARRA DE NOTIFICAÇÃO
+     //SnackbarModule,
+
+    AngularFireModule.initializeApp(firebaseConfig),
+    AgmCoreModule.forRoot({
+      apiKey: environment.googleMapsKey
+    })
+    
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, GoogleMapComponent, ContatoComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,10 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { SharedModule } from '../shared/shared.module';
+
+import { ContatoService } from './contato.service';
+
+//import { NotesListComponent } from './notes-list/notes-list.component';
+//import { NoteDetailComponent } from './note-detail/note-detail.component';
+
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    AngularFirestoreModule.enablePersistence(),
   ],
-  declarations: []
+  declarations: [
+   // NotesListComponent,
+   // NoteDetailComponent,
+  ],
+  providers: [ContatoService],
 })
 export class ContatoModule { }

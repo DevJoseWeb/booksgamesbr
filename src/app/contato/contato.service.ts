@@ -27,10 +27,12 @@ export class ContatoService {
   }
 
   getData(): Observable<Contato[]> {
+    firebase.firestore.setLogLevel('debug');
     return this.contatosCollection.valueChanges();
   }
 
   getSnapshot(): Observable<Contato[]> {
+    firebase.firestore.setLogLevel('debug');
     return this.contatosCollection.snapshotChanges().map((actions) => {
       return actions.map((a) => {
         const data = a.payload.doc.data() as Contato;
@@ -49,6 +51,7 @@ export class ContatoService {
   }
 
   getContato(id: string) {
+    firebase.firestore.setLogLevel('debug');
     return this.afs.doc<Contato>(`contatos/${id}`);
   }
 

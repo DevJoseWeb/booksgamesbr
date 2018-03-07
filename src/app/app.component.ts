@@ -1,8 +1,9 @@
 import { Title } from '@angular/platform-browser';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { MatSnackBar } from '@angular/material';
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+
 
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';

@@ -16,11 +16,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 //MINHAS MUDANÇAS ADICIONAIS
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
 
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
@@ -43,6 +43,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatMenuModule,
     MatIconModule,
     MatTooltipModule,
+    MatDatepickerModule,
     MatExpansionModule,
     MatSnackBarModule,
    ],
@@ -66,6 +67,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatTooltipModule,
     MatExpansionModule,
     MatSnackBarModule,
+    MatDatepickerModule,
     BigInputComponent,
     BigInputActionComponent
   ]

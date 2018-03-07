@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SettingsComponent } from './settings';
 import { ContatoComponent } from './contato/contato.component'
+import { IssueComponent } from './issue/issue.component'
 import { GoogleMapComponent } from './google-map/google-map.component';
 
 const routes: Routes = [
@@ -11,8 +12,11 @@ const routes: Routes = [
     path: '', redirectTo: 'about', pathMatch: 'full'
   },
   {
-    //path: 'contato', redirectTo: 'contato'
+
     path: 'contato',      component: ContatoComponent 
+  },
+  {
+    path: 'issue',      component: IssueComponent 
   },
   {
     path: 'settings', component: SettingsComponent, data: { title: 'Settings'}

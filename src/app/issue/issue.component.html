@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="main-heading">Listagem de Issue</h1>
+      </div>
+    </div>
+    
+    <div class="row align-items-end">
+
+      <div  class="col-md-12 col-lg-8" [ngClass]="animateOnRouteEnter">
+        <mat-card>
+          <mat-card-actions>
+
+              <table matSort (matSortChange)="sortData($event)">
+                  <tr>
+                    <th mat-sort-header="name">Dessert (100g)</th>
+                    <th mat-sort-header="calories">Calories</th>
+                    <th mat-sort-header="fat">Fat (g)</th>
+                    <th mat-sort-header="carbs">Carbs (g)</th>
+                    <th mat-sort-header="protein">Protein (g)</th>
+                  </tr>
+                
+                  <tr *ngFor="let dessert of sortedData">
+                    <td>{{dessert.name}}</td>
+                    <td>{{dessert.calories}}</td>
+                    <td>{{dessert.fat}}</td>
+                    <td>{{dessert.carbs}}</td>
+                    <td>{{dessert.protein}}</td>
+                  </tr>
+                </table>
+
+            </mat-card-actions>
+        </mat-card>
+      </div>
+  
+      <div  class="col-md-12 col-lg-4" [ngClass]="animateOnRouteEnter">
+        <mat-card>
+            <mat-card-title>Cadastro de Issue !</mat-card-title>
+         
+            <mat-form-field>
+                <mat-select [(ngModel)]="nome" placeholder="Selecione um Artista">
+        
+                  <mat-option value="Junior">Junior</mat-option>
+                  <mat-option value="Deividy">Deividy</mat-option>
+                  <mat-option value="Giulia">Giulia</mat-option>
+                  <mat-option value="oão Paulo">João Paulo</mat-option>
+                  <mat-option value="oão Paulo">Ismael</mat-option>
+                  <mat-option value="oão Paulo">Fernando</mat-option>
+                  <mat-option value="oão Paulo">Wesley</mat-option>
+        
+                </mat-select>
+           </mat-form-field>
+
+           <mat-form-field>
+              <input [(ngModel)]="inicio" required matInput placeholder="Início">
+            </mat-form-field>
+      
+            <mat-form-field>
+              <textarea [(ngModel)]="andamento" required rows="10" cols="50" 
+              matInput placeholder="Andamento Issue"></textarea>
+            </mat-form-field>
+      
+            <mat-form-field>
+              <input [(ngModel)]="fim" required matInput placeholder="Fim da Issue">
+            </mat-form-field>
+      
+            <mat-form-field>
+              <input [(ngModel)]="valor" required matInput placeholder="Valor da Issue">
+            </mat-form-field>
+         
+            <button mat-button (click)="createIssue()">Start Game :-)
+                <i class="material-icons">gavel</i>
+            </button>
+        </mat-card>
+      </div>
+   </div>
+  
+  
+  

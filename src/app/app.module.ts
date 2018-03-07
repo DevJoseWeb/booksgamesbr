@@ -21,10 +21,12 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AgmCoreModule } from '@agm/core';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { ContatoComponent } from './contato/contato.component';
+import { IssueComponent } from './issue/issue.component';
 
 //import { GoogleMapModule } from './google-map/google-map.module'
 
 import { ContatoModule } from './contato/contato.module';
+import { IssueModule } from './issue/issue.module';
 
 @NgModule({
   imports: [
@@ -45,6 +47,8 @@ import { ContatoModule } from './contato/contato.module';
 
     ContatoModule,
 
+    IssueModule,
+
     //GoogleMapModule,
     //BARRA DE NOTIFICAÇÃO
      //SnackbarModule,
@@ -55,7 +59,7 @@ import { ContatoModule } from './contato/contato.module';
     })
     
   ],
-  declarations: [AppComponent, GoogleMapComponent, ContatoComponent],
+  declarations: [AppComponent, GoogleMapComponent, ContatoComponent, IssueComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

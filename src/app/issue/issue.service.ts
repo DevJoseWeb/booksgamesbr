@@ -23,7 +23,7 @@ export class IssueService {
   issueDocument:   AngularFirestoreDocument<Issue>;
 
   constructor(private afs: AngularFirestore) {
-    this.issuesCollection = this.afs.collection('issues', (ref) => ref.orderBy('time', 'desc').limit(10));
+    this.issuesCollection = this.afs.collection('issues', (ref) => ref.orderBy('time', 'desc').limit(5));
   }
 
   getData(): Observable<Issue[]> {

@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'; 
 
-import { SharedModule } from '@app/shared';
+import { SharedModule } from '@app/shared';//TODOS OS MÓDULOS DO MATERIAL
 import { CoreModule } from '@app/core';
 
 import { SettingsModule } from './settings';
@@ -28,39 +30,56 @@ import { IssueComponent } from './issue/issue.component';
 import { ContatoModule } from './contato/contato.module';
 import { IssueModule } from './issue/issue.module';
 
+import { FormsModule } from '@angular/forms'
+
+import { 
+  MatTableModule, 
+  MatFormFieldModule, 
+  MatInputModule, 
+  MatSortModule, 
+  MatDialogModule, 
+  MatButtonModule 
+} from '@angular/material';
+
+import { EditDialogComponent } from './issue/edit-dialog.component';
+
 @NgModule({
   imports: [
+
     // angular
     BrowserAnimationsModule,
     BrowserModule,
-
     // core & shared
     CoreModule,
     SharedModule,
-
     // features
     StaticModule,
     SettingsModule,
-
     // app
     AppRoutingModule,
-
     ContatoModule,
-
     IssueModule,
+    HttpModule,
+    HttpClientModule,
 
-    //GoogleMapModule,
-    //BARRA DE NOTIFICAÇÃO
-     //SnackbarModule,
-
+    MatTableModule, 
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatSortModule, 
+    MatDialogModule, 
+    MatButtonModule,
+    FormsModule,
+   
     AngularFireModule.initializeApp(firebaseConfig),
     AgmCoreModule.forRoot({
       apiKey: environment.googleMapsKey
     })
     
   ],
-  declarations: [AppComponent, GoogleMapComponent, ContatoComponent, IssueComponent],
+  declarations: [AppComponent, GoogleMapComponent,
+     ContatoComponent, IssueComponent, EditDialogComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EditDialogComponent]
 })
 export class AppModule {}

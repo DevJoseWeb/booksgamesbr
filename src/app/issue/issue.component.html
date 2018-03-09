@@ -1,33 +1,81 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="main-heading">Listagem de Issue</h1>
+          <h2 class="main-heading"></h2>
+          <mat-chip color="accent" selected="true">Listagem de Issue</mat-chip>
+        
       </div>
     </div>
-    
+
     <div class="row align-items-end">
 
       <div  class="col-md-12 col-lg-8" [ngClass]="animateOnRouteEnter">
         <mat-card>
           <mat-card-actions>
 
-              <table matSort (matSortChange)="sortData($event)">
-                  <tr>
-                    <th mat-sort-header="name">Dessert (100g)</th>
-                    <th mat-sort-header="calories">Calories</th>
-                    <th mat-sort-header="fat">Fat (g)</th>
-                    <th mat-sort-header="carbs">Carbs (g)</th>
-                    <th mat-sort-header="protein">Protein (g)</th>
-                  </tr>
-                
-                  <tr *ngFor="let dessert of sortedData">
-                    <td>{{dessert.name}}</td>
-                    <td>{{dessert.calories}}</td>
-                    <td>{{dessert.fat}}</td>
-                    <td>{{dessert.carbs}}</td>
-                    <td>{{dessert.protein}}</td>
-                  </tr>
-                </table>
+             <!-- COMEÇO DA TABELA --> 
+         
+  <div class="example-header">
+      <i class="material-icons">find_replace</i>
+  <mat-form-field>
+  
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Pesquisar">
+  </mat-form-field>
+</div>
+
+  <mat-table #table [dataSource]="dataSource" [trackBy]="trackByUid" matSort class="animate">
+
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <i class="material-icons">face</i>Nome 
+         </mat-header-cell>
+      <mat-cell *matCellDef="let issue"> {{ issue.nome }} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="inicio">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <i class="material-icons">flight_takeoff</i>Início </mat-header-cell>
+      <mat-cell *matCellDef="let issue"> {{ issue.inicio }} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="andamento">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <i class="material-icons">hourglass_empty</i>Andamento </mat-header-cell>
+      <mat-cell *matCellDef="let issue"> {{ issue.andamento }} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="fim">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><i class="material-icons">flight_land</i> Fim </mat-header-cell>
+      <mat-cell *matCellDef="let issue"> {{ issue.fim }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="valor">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <i class="material-icons">attach_money</i>Valor </mat-header-cell>
+      <mat-cell *matCellDef="let issue"> R$ {{ issue.valor }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="editar">
+       
+        <mat-header-cell *matHeaderCellDef mat-sort-header><i class="material-icons">border_color</i> Editar </mat-header-cell>
+        <mat-cell *matCellDef="let issue"> 
+       
+      <a matTooltip="Editar o prazo da Issue" (click)="openDialog(issue)" matTooltipPosition="below">
+          <button mat-mini-fab color="primary" routerLink="../issue">
+            <i class="material-icons">alarm</i>
+          </button>
+      </a>
+
+    
+        </mat-cell>
+    </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+</mat-table>
+
+
+<!-- FIM DA TABELA -->
+
 
             </mat-card-actions>
         </mat-card>
@@ -43,10 +91,11 @@
                   <mat-option value="Junior">Junior</mat-option>
                   <mat-option value="Deividy">Deividy</mat-option>
                   <mat-option value="Giulia">Giulia</mat-option>
-                  <mat-option value="oão Paulo">João Paulo</mat-option>
-                  <mat-option value="oão Paulo">Ismael</mat-option>
-                  <mat-option value="oão Paulo">Fernando</mat-option>
-                  <mat-option value="oão Paulo">Wesley</mat-option>
+                  <mat-option value="João Paulo">João Paulo</mat-option>
+                  <mat-option value="Ismael">Ismael</mat-option>
+                  <mat-option value="Fernando">Fernando</mat-option>
+                  <mat-option value="Wesley">Wesley</mat-option>
+                  <mat-option value="Paula">Paula</mat-option>
         
                 </mat-select>
            </mat-form-field>
@@ -68,9 +117,28 @@
               <input [(ngModel)]="valor" required matInput placeholder="Valor da Issue">
             </mat-form-field>
          
-            <button mat-button (click)="createIssue()">Start Game :-)
-                <i class="material-icons">gavel</i>
-            </button>
+            <mat-chip-list>
+
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                          
+                <a matTooltip="Start Game" (click)="createIssue()" matTooltipPosition="below">
+                    <button mat-mini-fab color="primary" routerLink="../issue">
+                      <i class="material-icons">gavel</i>
+
+                    </button>
+                </a>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+             
+              </mat-chip-list>
+              
+       
+
         </mat-card>
       </div>
    </div>

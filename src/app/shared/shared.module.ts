@@ -21,6 +21,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 //MINHAS MUDANÇAS ADICIONAIS
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
@@ -44,6 +48,10 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatIconModule,
     MatTooltipModule,
     MatDatepickerModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
     MatExpansionModule,
     MatSnackBarModule,
    ],
@@ -68,6 +76,10 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatExpansionModule,
     MatSnackBarModule,
     MatDatepickerModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
     BigInputComponent,
     BigInputActionComponent
   ]

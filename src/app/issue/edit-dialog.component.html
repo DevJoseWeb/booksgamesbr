@@ -1,0 +1,25 @@
+<mat-form-field>
+        <input matInput [(ngModel)]="newAndamento" placeholder="Digite o Adamento">
+</mat-form-field>
+<mat-form-field>
+                <input matInput [(ngModel)]="newAndamento" placeholder="Digite a Nova Data">
+</mat-form-field>              
+    
+<mat-chip-list>
+
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                          
+                <a matTooltip="Start Game" (click)="updateAndamento()" matTooltipPosition="below">
+                    <button mat-mini-fab color="primary" routerLink="../issue">
+                      <i class="material-icons">gavel</i>
+                    </button>
+                </a>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+                <mat-chip></mat-chip>
+             
+              </mat-chip-list>

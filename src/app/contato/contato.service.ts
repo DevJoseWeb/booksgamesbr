@@ -5,7 +5,7 @@ import { Contato } from './contato-model';
 
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-
+//  firebase.firestore.setLogLevel('debug');
 interface NewContato {
     nome: string;
     email: string;
@@ -27,13 +27,11 @@ export class ContatoService {
   }
 
   getData(): Observable<Contato[]> {
-    firebase.firestore.setLogLevel('debug');
     return this.contatosCollection.valueChanges();
   }
 
   getSnapshot(): Observable<Contato[]> {
-    firebase.firestore.setLogLevel('debug');
-    return this.contatosCollection.snapshotChanges().map((actions) => {
+     return this.contatosCollection.snapshotChanges().map((actions) => {
       return actions.map((a) => {
         const data = a.payload.doc.data() as Contato;
         return { 
@@ -51,8 +49,7 @@ export class ContatoService {
   }
 
   getContato(id: string) {
-    firebase.firestore.setLogLevel('debug');
-    return this.afs.doc<Contato>(`contatos/${id}`);
+      return this.afs.doc<Contato>(`contatos/${id}`);
   }
 
   create(

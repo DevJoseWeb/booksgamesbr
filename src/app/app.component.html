@@ -79,9 +79,16 @@
       <router-outlet #o="outlet"></router-outlet>
     </div>
 
+    <mat-chip-list>
+        <mat-chip color="accent" selected="true">Audio Livro Macunaíma --></mat-chip>
+        <audio controls id="demo" src="https://firebasestorage.googleapis.com/v0/b/booksgames-br.appspot.com/o/macunaima.mp3?alt=media&token=b571b7a5-058d-41d6-bdbc-db79025a9d7f"></audio>
+        <mat-chip color="accent" selected="true">Ebook da Obra --></mat-chip>
+            <a href=" http://sanderlei.com.br/PDF/Mario-de-Andrade/Mario-de-Andrade-Macunaima.pdf"><i class="material-icons">picture_as_pdf</i></a>
+        </mat-chip-list>
     <div class="footer">
       <div class="row">
         <div class="col-sm-12 links">
+         
             <button mat-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
                 <!--<img src="https://www.ancine.gov.br/sites/all/themes/ancine/img/ancine-logo.jpg" style="width:60px;height:50px;">-->
             </button>

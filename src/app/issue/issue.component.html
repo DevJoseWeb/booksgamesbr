@@ -51,7 +51,7 @@
 
     <ng-container matColumnDef="valor">
       <mat-header-cell *matHeaderCellDef mat-sort-header> <i class="material-icons">attach_money</i>Valor </mat-header-cell>
-      <mat-cell *matCellDef="let issue"> R$ {{ issue.valor }} </mat-cell>
+      <mat-cell *matCellDef="let issue"> {{ issue.valor | currency: 'BRL': true}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="editar">

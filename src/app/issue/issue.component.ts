@@ -40,7 +40,7 @@ export class IssueComponent implements OnInit, AfterViewInit {
   andamento: string;
   fim: string;
   valor: string;
-  id?: string;
+  uid?: string;
   time: number;
 
   constructor(
@@ -81,7 +81,7 @@ export class IssueComponent implements OnInit, AfterViewInit {
 
   openDialog(data): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      width: '350px',
+      width: '600px',
       data: data
     });
 }

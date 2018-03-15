@@ -4,7 +4,7 @@ export interface Issue {
     andamento: string;
     fim: string;
     valor: string;
-    id?: string;
+    uid?: string
     time: number;
    }
   

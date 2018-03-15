@@ -12,7 +12,7 @@ interface NewIssue {
   andamento: string;
   fim: string;
   valor: string;
-  //id?: string;
+  //uid?: string;
   time: number;
 }
 
@@ -35,7 +35,7 @@ export class IssueService {
       return actions.map((a) => {
         const data = a.payload.doc.data() as Issue;
         return { 
-          id: a.payload.doc.id, 
+          uid: a.payload.doc.id, 
           nome: data.nome, 
           inicio: data.inicio,
           andamento: data.andamento,
@@ -48,8 +48,8 @@ export class IssueService {
     });
   }
 
-  getIssue(id: string) {
-    return this.afs.doc<Issue>(`issues/${id}`);
+  getIssue(uid: string) {
+    return this.afs.doc<Issue>(`issues/${uid}`);
   }
 
   create(
@@ -79,4 +79,20 @@ export class IssueService {
     return this.getIssue(id).delete();
   }
   */
+
+    // Database seeding
+   /* addOne() {
+      const hacker = {
+        name: faker.name.findName(),
+        age: faker.random.number({ min: 18, max: 99 }),
+        email: faker.internet.email(),
+        phrase: faker.hacker.phrase(),
+        uid: faker.random.alphaNumeric(16)
+      }
+      this.afs.collection('hackers').doc(hacker.uid).set(hacker)
+    }
+*/
+ trackByUid(index,issues) {
+  return issues.uid;
+}
 }

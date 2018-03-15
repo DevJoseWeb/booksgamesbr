@@ -9,7 +9,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class EditDialogComponent {
 
-    newAndamento: string;
+    andamento: string;
 
   constructor(
     private afs: AngularFirestore,
@@ -21,7 +21,7 @@ export class EditDialogComponent {
   }
 
   updateAndamento(): void {
-    this.afs.collection('issues').doc(this.data.uid).update({ andamento: this.newAndamento })
+    this.afs.collection('issues').doc(this.data.uid).update({ andamento: this.andamento })
     this.dialogRef.close();
   }
 }

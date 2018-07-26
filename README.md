@@ -1,3 +1,6 @@
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/DevJoseWeb/booksgamesbr.svg)](https://greenkeeper.io/)
+
 https://github.com/DevJoseWeb/booksgamesbr
 git add *
 git commit -m "comentários das alterações"
